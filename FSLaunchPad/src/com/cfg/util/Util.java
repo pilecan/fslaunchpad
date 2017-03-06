@@ -122,13 +122,6 @@ public class Util implements Info{
     	i = (max - i)+1;
     	
 		formatted = String.format("%04d", i);
-		
-/*   	if ( max > 999){
-    		formatted = String.format("%04d", i);
-    	} else {
-        	formatted = String.format("%03d", i);
-    	}
-*/    
     	
     	return formatted;
     }

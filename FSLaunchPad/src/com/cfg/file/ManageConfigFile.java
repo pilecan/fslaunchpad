@@ -191,8 +191,6 @@ public class ManageConfigFile implements Info {
     	initFromMapAll();
     //	System.out.println(mapSource.size());
 		initMaps(mapAllScenery.size());
-		
-    
     }	
    
     public String addArea( File[] files){
@@ -279,36 +277,11 @@ public class ManageConfigFile implements Info {
 
 		Map<Integer, Area> mapWorks = Util.createMapWork(mapAllScenery);
 
-/*		for (Map.Entry<Integer, Area> entry : mapWorks.entrySet()) {
-			Integer key = entry.getKey();
-			Area area = entry.getValue();
-			//System.out.println(area.toString());
-
-			if (areaDeleted.getNum().compareTo(area.getNum()) > 0) {
-				//System.out.println(area.toString());
-
-				Area newArea = new Area(Util.addZero(key+1));
-				newArea.setLayer(new Integer((key+1)).toString());
-				newArea.setActive(area.getActive());
-				newArea.setLocal(area.getLocal());
-				newArea.setRequired(area.getRequired());
-				newArea.setTitle(area.getTitle());
-				newArea.setTexture(area.getTexture());
-				mapWork.put(newArea.getNum(), newArea);
-			} else {
-				mapWork.put(key.toString(), area);
-			}
-		}
-*/
 		Util.adjustMaplistArea(areaDeleted.getLocalkey(), mapListArea);
 		saveMapListArea(mapListArea);
 		
 		System.out.println(mapAllScenery.size() + " ---- "+ mapWorks.size());
 
-/*		mapAllScenery.clear();
-		mapAllScenery.putAll(mapWork);
-		mapWork.clear();
-*/
 		saveAllScenery();
 		readMapListArea(sceneryAreaFile);
 
